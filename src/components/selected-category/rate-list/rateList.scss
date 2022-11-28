@@ -20,12 +20,13 @@
         cursor: pointer;
 
         .star-icons {
-            @include flex_center;
+           display: flex;
+           align-items: center;
 
             img {
                 margin: 0px 1px;
-                width: 15px;
-                height: 15px;
+                width: 18px;
+                height: 18px;
             }
         }
 
