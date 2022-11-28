@@ -20,7 +20,7 @@ const RateList = () => {
     const rating1 = currentCategory ? currentCategory[1].filter(item => Math.floor(item.rating.rate) === 5) : [];
 
 
-    const createArrayWithStars = length => [...Array(length)].fill('/images/icons/star.png', 0);
+    const createArrayWithStars = length => [...Array(length)].fill('/online-store/build//images/icons/star.png', 0);
 
     const handleProducts = productsArr => {
         dispatch(setSelectedRateProducts(productsArr));
