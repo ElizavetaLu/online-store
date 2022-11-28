@@ -1,0 +1,45 @@
+@import "../../varibles";
+
+.footer {
+    height: 100px;
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin-top: $margin_between_sections;
+    @include flex_just-sp-b_align-c;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: $main_panel_color;
+
+    .footer-navigation {
+        display: flex;
+
+        .nav-item {
+            padding: 0px 5px;
+            margin: 0px 5px;
+            border-bottom: 1.5px solid transparent;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-item:hover {
+            border-bottom: 1.5px solid #000;
+        }
+    }
+
+    a {
+        .logo {
+            img {
+                width: 130px;
+            }
+        }
+    }
+
+    .company {
+        font-size: 13px;
+        font-weight: 500;
+    }
+}

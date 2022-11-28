@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+$main_panel_color: #e5e2e1;
+$main_slider_height: 700px;
+$header_height: 87px;
+$cart_rows_height: 70px;
+
+$light_black: rgb(81, 81, 81);
+$margin_between_sections: 100px;
+
+
+@mixin flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex_just-sp-b_align-c {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin selectPr_title_font {
+    font-size: 16px;
+    color: rgb(81, 81, 81);
+    font-weight: 500;
+}
+
+@mixin light_category_font {
+    font-size: 13px;
+    color: rgb(181, 181, 181);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+

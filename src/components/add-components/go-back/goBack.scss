@@ -1,0 +1,28 @@
+@import "../../../varibles";
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 60px;
+    width: 150px;
+    color: $light_black;
+    cursor: pointer;
+
+    .arrow-back {
+        img {
+            width: 20px;
+            margin-right: 5px;
+        }
+    }
+
+    .text{
+        font-size: 20px;
+        padding-bottom: 6px;
+    }
+
+}
+
+.nav-btn:hover {
+    color: #000;
+}

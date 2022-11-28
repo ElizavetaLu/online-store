@@ -1,0 +1,169 @@
+@import "../../varibles";
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: $header_height;
+    box-sizing: border-box;
+    background-color: $main_panel_color;
+    padding: 10px 40px;
+
+    .header-main {
+        @include flex_just-sp-b_align-c;
+
+        .location-container {
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+
+            .location-icon {
+                @include flex_center;
+
+                img {
+                    margin-right: 7px;
+                    width: 20px;
+                }
+            }
+        }
+
+        .logo-nav {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 250px;
+
+            .logo {
+                img {
+                    width: 100px;
+                }
+            }
+
+            .header-navigation {
+                z-index: 200;
+                bottom: -32px;
+                position: absolute;
+                @include flex_center;
+                height: 100%;
+
+                .nav-item {
+                    padding: 10px 0px;
+                    width: 80px;
+                    border-bottom: 1.5px solid transparent;
+                    position: relative;
+                    cursor: pointer;
+                    @include flex_center;
+
+                    .categories-nav {
+                        box-sizing: border-box;
+                        position: absolute;
+                        left: 0;
+                        bottom: -157px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        background-color: #fff;
+                        width: 200px;
+                        box-shadow: 2px 2px 4px #0000000a;
+                    }
+                }
+
+                .nav-item:hover {
+                    font-size: 17px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .headet-items {
+            display: flex;
+            align-items: center;
+            padding-top: 3px;
+
+            .item {
+                position: relative;
+
+                .circle {
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    top: 0;
+                    right: 3px;
+                    background-color: rgb(224, 5, 5);
+                }
+
+                .item-icon {
+                    width: 30px;
+                    margin: 0px 10px;
+                    padding-bottom: 5px;
+                }
+
+                .item-icon.user {
+                    width: 37px;
+                }
+
+                .item-icon.cart {
+                    width: 27px;
+                }
+
+
+
+                .wrap {
+                    display: inline-block;
+                    position: relative;
+                    height: 34px;
+                    margin-right: 6px;
+
+
+                    input[type="text"] {
+                        height: 30px;
+                        font-size: 16px;
+                        display: inline-block;
+                        border: none;
+                        outline: none;
+                        padding-right: 32px;
+                        width: 0px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background: none;
+                        z-index: 3;
+                        transition: width .7s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+                        cursor: pointer;
+                    }
+
+                    input[type="text"]:focus:hover {
+                        border-bottom: 1px solid #BBB;
+                    }
+
+                    input[type="text"]:focus {
+                        width: 300px;
+                        z-index: 1;
+                        border-bottom: 1px solid #BBB;
+                        cursor: text;
+                    }
+
+                    input[type="submit"] {
+                        height: 30px;
+                        width: 30px;
+                        display: inline-block;
+                        background-color: transparent;
+                        background-image: url("/pepper-store/build/../../../public/images/icons/search.png");
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        text-indent: -10000px;
+                        border: none;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        z-index: 2;
+                        cursor: pointer;
+                    }
+
+                }
+            }
+        }
+    }
+
+}

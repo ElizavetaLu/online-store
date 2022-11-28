@@ -1,0 +1,82 @@
+@import "../../varibles";
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+
+    .block-section {
+        max-width: 1600px;
+        margin: 0 auto;
+        height: 750px;
+        display: flex;
+        justify-content: center;
+        margin-top: calc(60px + $margin_between_sections);
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 412px;
+            height: 100%;
+
+            .block-large {
+                width: 412px;
+                height: 450px;
+                overflow: hidden;
+
+                img {
+                    width: 412px;
+                    
+                }
+            }
+
+            .block-sm {
+                width: 412px;
+                height: 270px;
+                overflow: hidden;
+
+                img {
+                    width: 412px;
+                }
+            }
+        }
+
+        .column.reverse {
+            flex-direction: column-reverse;
+            margin: 0px 30px;
+
+            .block-sm.text {
+                box-sizing: border-box;
+                padding: 30px;
+                text-align: center;
+                @include flex_center;
+                font-size: 24px;
+                text-transform: uppercase;
+                background-color: $main_panel_color;
+                color: rgb(32, 0, 0);
+            }
+        }
+    }
+
+
+
+    .new-arrivals {
+        width: 90%;
+        max-width: 1600px;
+        margin: 0 auto;
+        margin-top: $margin_between_sections;
+
+        .row-title {
+            font-size: 30px;
+        }
+
+        .all-cards {
+            overflow: hidden;
+            overflow-x: scroll;
+            @include flex_center;
+            padding: 20px 0px;
+            height: 345px;
+        }
+
+    }
+}

@@ -1,0 +1,39 @@
+@import "../../../varibles";
+
+.image-section {
+    position: relative;
+    background-size: cover;
+    height: 660px;
+
+    .categories {
+        position: absolute;
+        bottom: -60px;
+        right: 0;
+        left: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+    }
+
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        height: $main_slider_height;
+        width: 100%;
+
+        .background {
+            z-index: 1;
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgb(246, 246, 246);
+            background: linear-gradient(0deg, rgba(246, 246, 246, 1) 21%, rgba(255, 255, 255, 0) 71%);
+        }
+    }
+
+
+}

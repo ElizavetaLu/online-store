@@ -1,0 +1,40 @@
+@import "../../../varibles";
+
+.rate-list {
+    display: flex;
+    flex-direction: column;
+
+    .showAll {
+        color: $light_black;
+        cursor: pointer;
+    }
+
+    .showAll:hover {
+        color: #000;
+    }
+
+    .stars-row {
+        @include flex_just-sp-b_align-c;
+        width: 125px;
+        margin-bottom: 3px;
+        cursor: pointer;
+
+        .star-icons {
+            @include flex_center;
+
+            img {
+                margin: 0px 1px;
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        .product-amount {
+            color: grey;
+        }
+
+        .product-amount:hover {
+            color: #000;
+        }
+    }
+}
