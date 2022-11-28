@@ -20,7 +20,7 @@ const ProductCard = (props) => {
                     <div className="name">{title}</div>
                     <div className="rate">
                         <div className="star">
-                            <img src="/pepper-store/build//images/icons/star.png" alt="" />
+                            <img src="/online-store/build//images/icons/star.png" alt="" />
                         </div>
                         <div className="rate0numb"> {rating.rate}</div>
                     </div>

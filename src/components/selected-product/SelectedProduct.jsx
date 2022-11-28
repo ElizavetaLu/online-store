@@ -47,6 +47,7 @@ const SelectedProduct = () => {
                             <input
                                 type="number"
                                 className="numb-input"
+                                min={1}
                                 value={value}
                                 onChange={e => setValue(e.target.value)}
                             />
@@ -71,7 +72,7 @@ const SelectedProduct = () => {
                         <div className="data-name">Rate:</div>
                         <div className="data-content">
                             <div className="star">
-                                <img src="/pepper-store/build//images/icons/star.png" alt="" />
+                                <img src="/online-store/build//images/icons/star.png" alt="" />
                             </div>
                             <div className="rate">  {rating.rate}</div>
                         </div>
