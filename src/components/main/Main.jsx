@@ -15,16 +15,16 @@ const Main = () => {
             <div className="block-section">
                 <div className="column">
                     <div className="block-large">
-                        <img src="/pepper-store/build//images/pexels-jonaorle-3828245.jpg" alt="" />
+                        <img src="/online-store/build//images/pexels-jonaorle-3828245.jpg" alt="" />
                     </div>
                     <div className="block-sm">
-                        <img src="/pepper-store/build//images/pexels-say-straight-2735981.jpg" alt="" />
+                        <img src="/online-store/build//images/pexels-say-straight-2735981.jpg" alt="" />
                     </div>
                 </div>
 
                 <div className="column reverse">
                     <div className="block-large">
-                        <img src="/pepper-store/build//images/thom-bradley-mwa_nzFpnJw-unsplash.jpg" alt="" />
+                        <img src="/online-store/build//images/thom-bradley-mwa_nzFpnJw-unsplash.jpg" alt="" />
                     </div>
                     <div className="block-sm text">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi vitae reiciendis veniam soluta.
@@ -33,10 +33,10 @@ const Main = () => {
 
                 <div className="column">
                     <div className="block-large">
-                        <img src="/pepper-store/build//images/tyler-nix-Zhh3WM2ko3s-unsplash.jpg" alt="" />
+                        <img src="/online-store/build//images/tyler-nix-Zhh3WM2ko3s-unsplash.jpg" alt="" />
                     </div>
                     <div className="block-sm">
-                        <img src="/pepper-store/build//images/pexels-say-straight-2735970.jpg" alt="" />
+                        <img src="/online-store/build//images/pexels-say-straight-2735970.jpg" alt="" />
                     </div>
                 </div>
             </div>

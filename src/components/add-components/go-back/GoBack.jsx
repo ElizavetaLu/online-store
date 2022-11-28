@@ -9,7 +9,7 @@ const GoBack = () => {
     return (
         <div className="nav-btn" onClick={() => navigate(-1)}>
             <div className="arrow-back">
-                <img src="/pepper-store/build//images/icons/d-arrow.png" alt="" />
+                <img src="/online-store/build//images/icons/d-arrow.png" alt="" />
             </div>
             <div className="text">Go back</div>
         </div>

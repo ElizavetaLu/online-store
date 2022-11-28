@@ -42,7 +42,7 @@ const ShoppingCart = () => {
 
             <div className="popUp" style={{ opacity: popUp ? 1 : 0 }}>
                 <div className="icon">
-                    <img src="/pepper-store/build//images/icons/ok.png" alt="" />
+                    <img src="/online-store/build//images/icons/ok.png" alt="" />
                 </div>
                 <div className="pupUp-text">Successful</div>
                 <div className="close" onClick={() => setPopUp(false)}>+</div>
@@ -67,7 +67,7 @@ const ShoppingCart = () => {
 
                     <div className="home-page_nav">
                         <div className="nav-icon">
-                            <img src="/pepper-store/build//images/icons/d-arrow.png" alt="" />
+                            <img src="/online-store/build//images/icons/d-arrow.png" alt="" />
                         </div>
                         <Link to={'/online-store/build/'}>
                             <div className="nav-text">Go to home page</div>

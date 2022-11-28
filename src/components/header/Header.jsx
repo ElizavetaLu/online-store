@@ -19,7 +19,7 @@ const Header = () => {
 
                 <div className="location-container">
                     <div className="location-icon">
-                        <img src="/pepper-store/build//images/icons/navigation.png" alt="" />
+                        <img src="/online-store/build//images/icons/navigation.png" alt="" />
                     </div>
                     {city &&
                         <div className="location-data">{city}, {country} ({currency})</div>
@@ -29,7 +29,7 @@ const Header = () => {
                 <div className="logo-nav">
                     <Link to={'/online-store/build/'}>
                         <div className="logo">
-                            <img src="/pepper-store/build//images/icons/text-1669408186912.png" alt="" />
+                            <img src="/online-store/build//images/icons/text-1669408186912.png" alt="" />
                         </div>
                     </Link>
 
@@ -59,13 +59,13 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="item">
-                        <img src="/pepper-store/build//images/icons/user.png" alt="" className="item-icon user" />
+                        <img src="/online-store/build//images/icons/user.png" alt="" className="item-icon user" />
                     </div>
                     <Link to={'/online-store/build/shopping-cart'}>
                         <div className="item">
                             {cart.length > 0 &&
                                 < div className="circle"></div>}
-                            <img src="/pepper-store/build//images/icons/cart.png" alt="" className="item-icon cart" />
+                            <img src="/online-store/build//images/icons/cart.png" alt="" className="item-icon cart" />
                         </div>
                     </Link>
                 </div>
