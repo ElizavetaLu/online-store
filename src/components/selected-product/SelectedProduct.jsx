@@ -47,6 +47,7 @@ const SelectedProduct = () => {
                             <input
                                 type="number"
                                 className="numb-input"
+                                min={1}
                                 value={value}
                                 onChange={e => setValue(e.target.value)}
                             />
