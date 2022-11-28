@@ -15,16 +15,14 @@ const ImageBlock = () => {
     const categories = useSelector(state => state.allData.categories)
 
     return (
-        <div className="image-section" style={{backgroundImage: 'url("/online-store/build//images/architecture-g89febe089_1920.jpg")'}}>
+        <div className="image-section" style={{ backgroundImage: 'url("/online-store/build//images/architecture-g89febe089_1920.jpg")' }}>
             <div className="image-container">
                 <div className="background"></div>
             </div>
 
             <div className="categories">
-
                 {categories &&
-                    categories.map((item, i) => (<Category key={item} name={item} img={categoryImg[i]}/>))}
-
+                    categories.map((item, i) => (<Category key={item} name={item} img={categoryImg[i]} />))}
             </div>
         </div>
     )
