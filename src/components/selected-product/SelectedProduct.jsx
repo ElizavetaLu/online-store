@@ -1,23 +1,33 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { addToCart } from "../../redux/actions/index";
+import { addToCart, setPopupText, showPopup } from "../../redux/actions/index";
 import GoBack from "../add-components/go-back/GoBack";
-import "./selectedProduct.scss"
+import "./selectedProduct.scss";
+
 
 const SelectedProduct = () => {
+
     const location = useLocation()
+    const dispatch = useDispatch()
 
     const { category, description, image, price, rating, title } = location.state
 
-    const dispatch = useDispatch()
-
-
     const [value, setValue] = useState(1)
+
+    const addProductToCart = () => {
+        if (value > rating.count) return;
+
+        dispatch(setPopupText('Product was added to cart'));
+
+        dispatch(addToCart(location.state, value, title));
+        dispatch(showPopup(true))
+    }
+
     return (
-        <div className="selected-product_container">
+        <div className="selected-product-container">
             <GoBack />
-            
+
             <div className="selected-product">
 
                 <div className="selected-product_data">
@@ -25,39 +35,47 @@ const SelectedProduct = () => {
 
                     <div className="selected-product_photo">
                         <div className="product-image-large">
-                            <img src={image} alt="" />
+                            <img className="product-img" src={image} alt="" />
                         </div>
                         <div className="line"></div>
                     </div>
-
 
                     <div className="selected-product_info">
                         <div className="product-category">{category}</div>
                         <div className="product-description">
                             <div className="title">Description:</div>
-                            <div className="content">{description}</div>
+                            <p className="content">{description}</p>
                         </div>
 
-                        <div className="product-price">
-                            <div className="title">Price:</div>
-                            <div className="content">${price}</div>
-                        </div>
-
-                        <div className="cta">
-                            <input
-                                type="number"
-                                className="numb-input"
-                                min={1}
-                                value={value}
-                                onChange={e => setValue(e.target.value)}
-                            />
-
-                            <div className="button-cta">
-                                <button
-                                    className="btn"
-                                    onClick={() => dispatch(addToCart(location.state, value, title))}
-                                >Add to cart
-                                </button>
+                        <div className="price-amount-block">
+                            <div className="product-price">
+                                <div className="title">Price:</div>
+                                <div className="content">${price * (value || 0)}</div>
+                            </div>
+                            <div className="cta">
+                                <div className="select-amount">
+                                    <button className="amount-control" onClick={() => {
+                                        if (value === 1) return;
+                                        setValue(prev => prev - 1);
+                                    }}>
+                                        <img className="amount-img" src="/images/icons/minus.png" alt="" />
+                                    </button>
+                                    <input
+                                        type="number"
+                                        className="numb-input"
+                                        min={1}
+                                        value={value}
+                                        onChange={e => setValue(parseInt(e.target.value))}
+                                    />
+                                    <button className="amount-control" onClick={() => {
+                                        if (isNaN(value)) return setValue(1);
+                                        if (value >= rating.count) return setValue(rating.count);
+                                        setValue(prev => prev + 1);
+                                    }}>
+                                        <img className="amount-img" src="/images/icons/plus.png" alt="" />
+                                    </button>
+                                </div>
+                                <button className="btn" onClick={addProductToCart}>Add to cart </button>
                             </div>
                         </div>
                     </div>
@@ -71,10 +89,8 @@ const SelectedProduct = () => {
                     <div className="data-column">
                         <div className="data-name">Rate:</div>
                         <div className="data-content">
-                            <div className="star">
-                                <img src="/online-store/build//images/icons/star.png" alt="" />
-                            </div>
-                            <div className="rate">  {rating.rate}</div>
+                            <img className="star" src="/images/icons/star.png" alt="" />
+                            <div className="rate">{rating.rate}</div>
                         </div>
                     </div>
 
@@ -85,11 +101,6 @@ const SelectedProduct = () => {
 
                 </div>
             </div>
-
-
-
-
-            <div></div>
         </div>
     )
 }

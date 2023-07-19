@@ -1,4 +1,6 @@
 import {
+    SHOW_POPUP,
+    SET_POPUP_TEXT,
     GET_DATA,
     SET_DATA,
     SET_LOCATION,
@@ -14,8 +16,12 @@ import {
     SET_MEN_CLOTHING,
     SET_WOMEN_CLOTHING,
     SET_SELECTED_RATE_PRODUCTS,
-    SET_ACTIVE_RATE
+    SET_ACTIVE_RATE,
 } from "./types";
+
+
+export const showPopup = payload => ({ type: SHOW_POPUP, payload })
+export const setPopupText = payload => ({ type: SET_POPUP_TEXT, payload })
 
 
 export const getData = () => ({ type: GET_DATA })

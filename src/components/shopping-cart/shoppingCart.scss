@@ -2,77 +2,25 @@
 
 
 .cart-container {
-    max-width: 1600px;
-    margin: 0 auto;
+    @include container;
     margin-bottom: 60px;
 
-    .popUp {
-        @include flex_just-sp-b_align-c;
-        position: absolute;
-        top: 90px;
-        right: 90px;
-        background-color: rgb(220, 239, 205);
-        padding: 10px 15px;
-        border: 2px solid rgb(220, 232, 215);
-        border-radius: 2px;
-        opacity: 0;
-        transition: .8s;
-        color: $light_black;
-
-        .icon {
-            @include flex_center;
-
-            img {
-                width: 26px;
-            }
-        }
-
-        .pupUp-text {
-            margin: 0px 9px;
-            font-size: 17px;
-            font-weight: 600;
-        }
-
-        .close {
-            transform: rotate(45deg);
-            font-size: 27px;
-            font-weight: 500;
-            cursor: pointer;
-            color: $light_black;
-        }
-
-        .close:hover{
-            color: rgb(38, 38, 38);
-        }
-    }
-
-    .popUp:hover{
-        background-color: rgb(196, 233, 169);
-        border: 2px solid rgb(195, 206, 190);
-        color: rgb(38, 38, 38);
-    }
-
     .cart {
-        box-sizing: border-box;
         display: flex;
-        margin: 0px 40px;
-        height: 720px;
+        min-height: 720px;
 
         .cart-items-data {
-            box-sizing: border-box;
             width: 65%;
             background-color: #fff;
-            padding: 40px 50px;
+            padding: 30px 50px;
 
             .title-row {
                 @include flex_just-sp-b_align-c;
                 height: $cart_rows_height;
                 border-bottom: 2px solid grey;
-                box-sizing: border-box;
-                padding-bottom: 39px;
 
                 .text-row {
-                    font-size: 40px;
+                    font-size: 36px;
                     font-weight: 600;
                 }
 
@@ -84,56 +32,22 @@
             }
 
             .all-items-list {
-                box-sizing: border-box;
-                height: 500px;
+                max-height: 500px;
                 overflow: hidden;
                 overflow-y: scroll;
                 display: flex;
                 flex-direction: column;
+                gap: 20px;
                 padding: 10px 0px;
-            }
-
-            .home-page_nav {
-                border-top: 2px solid grey;
-                height: $cart_rows_height;
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-
-                .nav-icon {
-                    img {
-                        width: 13px;
-                        margin-right: 7px;
-                    }
-                }
-
-                a {
-                    text-decoration: none;
-                    color: #000;
-
-                    .nav-text {
-                        color: $light_black;
-                    }
-
-                    .nav-text:hover {
-                        color: #000;
-                    }
-                }
-            }
-
-            .home-page_nav:hover {
-                color: #000;
             }
         }
 
         .tottal-info {
-            box-sizing: border-box;
             width: 35%;
-            padding: 40px 50px;
+            padding: 30px 50px;
             background-color: rgb(236, 236, 236);
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
             justify-content: space-between;
 
             .summary-text {
@@ -143,31 +57,19 @@
                 font-size: 25px;
                 border-bottom: 2px solid grey;
                 width: 100%;
-                height: 72px;
-                box-sizing: border-box;
             }
 
             .extra-set {
-                box-sizing: border-box;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                gap: 30px;
                 width: 100%;
-                height: 80%;
-                padding: 30px 0px 50px;
+                margin-top: 20px;
 
                 .tottal-row {
                     @include flex_just-sp-b_align-c;
                     text-transform: uppercase;
                 }
-
-                .tottal-row.last {
-                    border-top: 2px solid grey;
-                    padding-top: 10px;
-                    font-size: 18px;
-                    font-weight: 600;
-                }
-
 
                 .form-group {
                     display: flex;
@@ -184,41 +86,97 @@
                         height: 40px;
                         font-size: 18px;
                         color: rgb(29, 29, 29);
-                    }
-
-                    input {
-                        padding-left: 5px;
-                        width: 200px;
+                        padding: 0 10px;
                     }
                 }
             }
 
-            .button {
-                box-sizing: border-box;
-                padding-top: 12px;
-                width: 100%;
-                height: $cart_rows_height;
+            .checkout-cta {
+                margin-top: 20px;
 
-                .btn {
-                    height: 60px;
+                .tottal-price {
+                    @include flex_just-sp-b_align-c;
+                    text-transform: uppercase;
+                    border-top: 2px solid grey;
+                    padding-top: 10px;
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                }
+
+                .button {
+                    border-radius: 2px;
+                    height: 55px;
                     width: 100%;
                     text-transform: uppercase;
                     font-size: 20px;
                     cursor: pointer;
                     border: none;
                     background-color: #fff;
+                    transition: all .2s;
                 }
 
-                .btn:hover {
+                .button:hover {
                     background-color: #000;
                     color: #fff;
                 }
-                .btn:active {
+
+                .button:active {
                     background-color: rgb(54, 54, 54);
                     color: #fff;
                 }
             }
 
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .cart-container {
+        @include container-mobile-padding;
+
+        .cart {
+            flex-direction: column;
+
+            .cart-items-data {
+                width: 100%;
+                padding: 20px 30px;
+
+                .title-row {
+                    padding-bottom: 25px;
+
+                    .text-row {
+                        font-size: 30px;
+                    }
+
+                    .items-amount {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .tottal-info {
+                width: 100%;
+                padding: 20px 30px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .cart-container {
+        .cart {
+            .cart-items-data {
+                padding: 15px 20px;
+
+                .title-row {
+                    padding-bottom: 15px;
+
+                    .text-row {
+                        font-size: 20px;
+                    }
+                }
+            }
         }
     }
 }

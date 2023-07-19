@@ -1,10 +1,12 @@
 import React from "react";
-import "./selectedCategory.scss";
-import ProductCard from "../add-components/product-card/ProductCard";
-import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import ProductCard from "../add-components/product-card/ProductCard";
 import GoBack from "../add-components/go-back/GoBack";
 import RateList from "./rate-list/RateList";
+import "./selectedCategory.scss";
+import DummyText from "../add-components/dummy-text/DummyText";
+
 
 const SelectedCategory = () => {
 
@@ -20,15 +22,22 @@ const SelectedCategory = () => {
 
     return (
         <div className="category-container">
-            <GoBack />
+            <div className="row">
+                <GoBack />
+
+                {/* mobile filter button */}
+                <button className="filter-btn">
+                    <img className="filter-icon" src="/images/icons/filter.png" alt="" />
+                </button>
+            </div>
 
             <div className="category-content">
                 <div className="filters">
                     <div className="filter-block">
                         <div className="filter-name">product search</div>
                         <div className="search-product">
-                            <input type="text" placeholder="Search product..." />
-                            <button>Search</button>
+                            <input className="search-input" type="text" placeholder="Search..." />
+                            <button className="btn">Search</button>
                         </div>
                     </div>
                     <div className="filter-block">
@@ -47,23 +56,29 @@ const SelectedCategory = () => {
                                 </div>
                             </div>
                             <div className="price-filter">
-                                <button>Filter</button>
+                                <button className="btn">Filter</button>
                                 <div className="filter-text">From $9.99 - $700</div>
                             </div>
                         </div>
                     </div>
                     <div className="filter-block">
                         <div className="filter-name">avarage rating</div>
-                        {currentCategory &&
-                            <RateList />
+                        {
+                            currentCategory && <RateList />
                         }
                     </div>
                 </div>
-                <div className="category-content">
+                <div className="products-list">
 
                     {
-                        selectedRateIsActive ? selectedRateProducts.map(item => (<ProductCard key={item.id} {...item} />))
-                            : currentCategory[1].length > 1 && currentCategory[1].map(item => (<ProductCard key={item.id} {...item} />))
+                        selectedRateIsActive
+                            ? selectedRateProducts.map(item => <ProductCard key={item.id} {...item} />)
+                            : currentCategory[1].length > 1 && currentCategory[1].map(item => <ProductCard key={item.id} {...item} />)
+                    }
+
+                    {
+                        (selectedRateProducts.length === 0 || currentCategory[1].length === 0)
+                        && <DummyText text="Products list is empty..." />
                     }
 
                 </div>
