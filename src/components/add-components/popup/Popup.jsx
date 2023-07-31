@@ -20,12 +20,12 @@ const Popup = () => {
     return (
         <div className={`popup ${isActive && 'active'}`}>
 
-            <img className="icon" src="/images/icons/ok.png" alt="" />
+            <img className="icon" src="/online-store/build//images/icons/ok.png" alt="" />
 
             <div className="pupup-text">{message}</div>
 
             <button className="close" onClick={() => dispatch(showPopup(false))}>
-                <img className="close-img" src="/images/icons/plus.png" alt="" />
+                <img className="close-img" src="/online-store/build//images/icons/plus.png" alt="" />
             </button>
         </div>
     )

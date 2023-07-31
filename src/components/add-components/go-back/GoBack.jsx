@@ -8,7 +8,7 @@ const GoBack = () => {
 
     return (
         <button className="back" onClick={() => navigate(-1)}>
-            <img className="back-icon" src="/images/icons/vector.png" alt="" />
+            <img className="back-icon" src="/online-store/build//images/icons/vector.png" alt="" />
         </button>
     )
 }

@@ -90,6 +90,10 @@
             }
         }
 
+        .vector-btn.disabled-left, .vector-btn.disabled-right {
+            opacity: 0.5;
+        }
+
         .all-cards {
             overflow: hidden;
             overflow-x: scroll;

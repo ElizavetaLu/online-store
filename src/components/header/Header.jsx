@@ -14,12 +14,47 @@ const Header = () => {
 
     const cart = useSelector(state => state.cart)
 
+    const [isMenuHidden, setIsMenuHidden] = useState(true)
+
     return (
         <div className="header">
+
+            <div className={`header-mobile ${isMenuHidden && 'hidden'}`}>
+
+                <button className="close-container" onClick={() => setIsMenuHidden(!isMenuHidden)}>
+                    <img className="close" src="/online-store/build//images/icons/plus.png" alt="" />
+                </button>
+
+                <div className="navigation-mobile">
+                    <div className="nav-item-mobile">
+                        <div className="nav-item-name-mobile" onClick={() => setActive(!active)}>
+                            <span>Shop</span>
+                            <img className={`vector ${active && 'active'}`} src="/online-store/build//images/icons/vector.png" alt="" />
+                        </div>
+                        {
+                            active &&
+                            <div className="categories-nav-mobile" onClick={() => {
+                                setIsMenuHidden(!isMenuHidden);
+                                setActive(!active);
+                            }}>
+                                {
+                                    categories &&
+                                    categories.map(item => <CategoryLink key={item} name={item} />)
+                                }
+                            </div>
+                        }
+                    </div>
+                    <div className="nav-item-mobile">About</div>
+                    <div className="nav-item-mobile">Contact</div>
+                    <div className="nav-item-mobile">Blog</div>
+                </div>
+            </div>
+
+
             <div className="header-main">
 
                 <div className="location-container">
-                    <img className="location-icon" src="/images/icons/navigation.png" alt="" />
+                    <img className="location-icon" src="/online-store/build//images/icons/navigation.png" alt="" />
 
                     {
                         city &&
@@ -28,8 +63,8 @@ const Header = () => {
                 </div>
 
                 <div className="logo-nav">
-                    <Link className="logo-link" to="/">
-                        <img className="logo" src="/images/icons/text-1669408186912.png" alt="" />
+                    <Link className="logo-link" to="/online-store/build">
+                        <img className="logo" src="/online-store/build//images/icons/text-1669408186912.png" alt="" />
                     </Link>
 
                     <div className="header-navigation">
@@ -62,19 +97,19 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="item">
-                        <img src="/images/icons/user.png" alt="" className="item-icon" />
+                        <img src="/online-store/build//images/icons/user.png" alt="" className="item-icon" />
                     </div>
                     <Link to={'shopping-cart'}>
                         <div className="item">
                             {
                                 cart.length > 0 && <div className="circle"></div>
                             }
-                            <img src="/images/icons/cart.png" alt="" className="item-icon" />
+                            <img src="/online-store/build//images/icons/cart.png" alt="" className="item-icon" />
                         </div>
                     </Link>
                 </div>
 
-                <img src='/images/icons/menu.png' alt="" className="menu-mobile" />
+                <img className="menu-mobile" onClick={() => setIsMenuHidden(!isMenuHidden)} src='/images/icons/menu.png' alt="" />
             </div >
         </div >
     )

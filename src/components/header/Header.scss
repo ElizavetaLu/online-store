@@ -5,6 +5,10 @@
     background-color: $main_panel_color;
     padding: 15px 0px;
 
+    .header-mobile {
+        display: none
+    }
+
     .header-main {
         @include container;
         width: 100%;
@@ -12,7 +16,6 @@
         justify-content: space-between;
 
         .location-container {
-            min-width: 200px;
             display: flex;
             align-items: center;
 
@@ -145,6 +148,70 @@
 
 @media screen and (max-width: 900px) {
     .header {
+
+        .header-mobile {
+            display: block;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-color: $main_panel_color;
+            padding: 45px;
+            @include flex_center;
+            transition: all .6s ease;
+
+            .close-container {
+                position: absolute;
+                right: 30px;
+                top: 30px;
+                border: none;
+                background-color: transparent;
+
+                .close {
+                    width: 30px;
+                    height: 30px;
+                    transform: rotate(45deg)
+                }
+            }
+
+            .navigation-mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+
+                .nav-item-mobile {
+                    cursor: pointer;
+                    font-size: 20px;
+
+                    .nav-item-name-mobile {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+
+                        .vector {
+                            transform: rotate(90deg);
+                            width: 15px;
+                        }
+                        .vector.active {
+                            transform: rotate(-90deg);
+                            width: 15px;
+                        }
+                    }
+
+                    .categories-nav-mobile{
+                        margin-top: 7px;
+                    }
+                }
+            }
+        }
+
+        .header-mobile.hidden {
+            top: -100%
+        }
+
         .header-main {
             @include container-mobile-padding;
 

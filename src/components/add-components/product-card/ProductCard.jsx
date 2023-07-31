@@ -11,7 +11,7 @@ const ProductCard = (props) => {
     const { image, price, rating, title } = props
 
     return (
-        <Link className="card-link" to={`/product/${title.slice(0, 15)}`} state={props}>
+        <Link className="card-link" to={`/online-store/build/product/${title.slice(0, 15)}`} state={props}>
             <div className="card">
                 <div className="product-photo">
                     <img className="photo" src={image} alt="" />
@@ -21,7 +21,7 @@ const ProductCard = (props) => {
                 <div className="rate-price-row">
                     <div className="price">${price}</div>
                     <div className="rate">
-                        <img className="star" src="/images/icons/star.png" alt="" />
+                        <img className="star" src="/online-store/build//images/icons/star.png" alt="" />
                         <div className="rate0numb"> {rating.rate}</div>
                     </div>
                 </div>

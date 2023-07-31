@@ -22,14 +22,13 @@ const App = () => {
   return (
     <>
       <Header />
-
       <Popup />
 
       <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/:name' element={<SelectedCategory />} />
-        <Route path='/product/:productName' element={<SelectedProduct />} />
-        <Route path='/shopping-cart' element={<ShoppingCart />} />
+        <Route path='/online-store/build' element={<Main />} />
+        <Route path='/online-store/build/:name' element={<SelectedCategory />} />
+        <Route path='/online-store/build/product/:productName' element={<SelectedProduct />} />
+        <Route path='/online-store/build/shopping-cart' element={<ShoppingCart />} />
       </Routes>
 
       <Footer />

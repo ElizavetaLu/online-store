@@ -30,7 +30,7 @@ const CartItem = (props) => {
             <div className="main-item-data">
                 <div className="item-name">
                     <div className="item-category">{category}</div>
-                    <Link className="item-title-link" to={`/product/${title.slice(0, 15)}`} state={props}>
+                    <Link className="item-title-link" to={`/online-store/build/product/${title.slice(0, 15)}`} state={props}>
                         <p className="item-title">{title}</p>
                     </Link>
                 </div>
@@ -39,7 +39,7 @@ const CartItem = (props) => {
                     <div className="count-amount">
                         <button className="count-btn" onClick={() => dispatch(decrementInCart(title))
                         }>
-                            <img className="count-img" src="/images/icons/minus.png" alt="" />
+                            <img className="count-img" src="/online-store/build//images/icons/minus.png" alt="" />
                         </button>
                         <input
                             type="number"
@@ -48,7 +48,7 @@ const CartItem = (props) => {
                             onChange={e => dispatch(onHandChangeInCart(e.target.value, title))}
                         />
                         <button className="count-btn" onClick={() => dispatch(incrementInCart(title))}>
-                            <img className="count-img" src="/images/icons/plus.png" alt="" />
+                            <img className="count-img" src="/online-store/build//images/icons/plus.png" alt="" />
                         </button>
                     </div>
 
@@ -58,7 +58,7 @@ const CartItem = (props) => {
             </div>
 
             <button className="delete-item" onClick={() => dispatch(removeFromCart(title))}>
-                <img className="delete-img" src="/images/icons/plus.png" alt="" />
+                <img className="delete-img" src="/online-store/build//images/icons/plus.png" alt="" />
             </button>
         </div>
 

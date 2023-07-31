@@ -10,7 +10,7 @@ const Category = ({ name, img }) => {
             <div className="image-container">
                 <img className="block-image" src={img} alt="" />
             </div>
-            <Link to={`/${name}`}>
+            <Link to={`/online-store/build/${name}`}>
                 <button className="btn">shop now</button>
             </Link>
         </div>

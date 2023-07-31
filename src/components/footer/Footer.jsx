@@ -15,8 +15,8 @@ const Footer = () => {
                     }
                 </div>
 
-                <Link to="/" className="logo">
-                    <img className="logo-icon" src="/images/icons/text-1669408186912.png" alt="" />
+                <Link to="/online-store/build" className="logo">
+                    <img className="logo-icon" src="/online-store/build//images/icons/text-1669408186912.png" alt="" />
                 </Link>
 
                 <p className="company">&#64; 2022 Pipka. All rights are reserved</p>
@@ -24,8 +24,8 @@ const Footer = () => {
 
                 {/* mobile */}
                 <div className="footer-mobile-logo">
-                    <Link to="/" className="logo-mobile">
-                        <img className="logo-icon-mobile" src="/images/icons/text-1669408186912.png" alt="" />
+                    <Link to="/online-store/build" className="logo-mobile">
+                        <img className="logo-icon-mobile" src="/online-store/build//images/icons/text-1669408186912.png" alt="" />
                     </Link>
 
                     <p className="company-mobile">&#64; 2022 Pipka. All rights are reserved</p>

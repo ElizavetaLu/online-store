@@ -58,7 +58,7 @@ const SelectedProduct = () => {
                                         if (value === 1) return;
                                         setValue(prev => prev - 1);
                                     }}>
-                                        <img className="amount-img" src="/images/icons/minus.png" alt="" />
+                                        <img className="amount-img" src="/online-store/build//images/icons/minus.png" alt="" />
                                     </button>
                                     <input
                                         type="number"
@@ -72,7 +72,7 @@ const SelectedProduct = () => {
                                         if (value >= rating.count) return setValue(rating.count);
                                         setValue(prev => prev + 1);
                                     }}>
-                                        <img className="amount-img" src="/images/icons/plus.png" alt="" />
+                                        <img className="amount-img" src="/online-store/build//images/icons/plus.png" alt="" />
                                     </button>
                                 </div>
                                 <button className="btn" onClick={addProductToCart}>Add to cart </button>
@@ -89,7 +89,7 @@ const SelectedProduct = () => {
                     <div className="data-column">
                         <div className="data-name">Rate:</div>
                         <div className="data-content">
-                            <img className="star" src="/images/icons/star.png" alt="" />
+                            <img className="star" src="/online-store/build//images/icons/star.png" alt="" />
                             <div className="rate">{rating.rate}</div>
                         </div>
                     </div>
