@@ -19,6 +19,10 @@
                 width: 25px;
             }
         }
+
+        .filters{
+            display: none;
+        }
     }
 
     .category-content {
@@ -172,6 +176,7 @@
             }
 
             .filters{
+                display: block;
                 position: fixed;
                 top: 0;
                 bottom: 0;
@@ -182,6 +187,7 @@
                 transition: all .6s ease;
 
                 .close-container {
+                    cursor: pointer;
                     position: absolute;
                     left: 20px;
                     top: 20px;

@@ -27,7 +27,7 @@ const Main = () => {
 
             scrollAmount += step;
 
-            if (scrollAmount >= 600) {
+            if (scrollAmount >= (window.innerWidth < 550 ? 280 : 600)) {
                 window.clearInterval(slideTimer);
             }
 

@@ -31,48 +31,48 @@ const SelectedCategory = () => {
                 <button className="filter-btn" onClick={() => setIsFilterActive(!isFilterActive)}>
                     <img className="filter-icon" src="/online-store/build//images/icons/filter.png" alt="" />
                 </button>
- 
-                    <div className={`filters ${isFilterActive && 'active'}`}>
 
-                        <button className="close-container" onClick={() => setIsFilterActive(!isFilterActive)}>
-                            <img className="close" src="/online-store/build//images/icons/plus.png" alt="" />
-                        </button>
+                <div className={`filters ${isFilterActive && 'active'}`}>
 
-                        <div className="filter-block">
-                            <div className="filter-name">product search</div>
-                            <div className="search-product">
-                                <input className="search-input" type="text" placeholder="Search..." />
-                                <button className="btn">Search</button>
-                            </div>
+                    <button className="close-container" onClick={() => setIsFilterActive(!isFilterActive)}>
+                        <img className="close" src="/online-store/build//images/icons/plus.png" alt="" />
+                    </button>
+
+                    <div className="filter-block">
+                        <div className="filter-name">product search</div>
+                        <div className="search-product">
+                            <input className="search-input" type="text" placeholder="Search..." />
+                            <button className="btn">Search</button>
                         </div>
-                        <div className="filter-block">
-                            <div className="filter-name">filter by price</div>
-                            <div className="filter-settings">
-                                <div className="scale">
-                                    <div className="reg">
-                                        <div className="scale-circle left"></div>
-                                        <div className="scale-line"></div>
-                                        <div className="scale-circle right"></div>
-                                    </div>
-
-                                    <div className="scale-price">
-                                        <div className="num">$9.99</div>
-                                        <div className="num">$700</div>
-                                    </div>
+                    </div>
+                    <div className="filter-block">
+                        <div className="filter-name">filter by price</div>
+                        <div className="filter-settings">
+                            <div className="scale">
+                                <div className="reg">
+                                    <div className="scale-circle left"></div>
+                                    <div className="scale-line"></div>
+                                    <div className="scale-circle right"></div>
                                 </div>
-                                <div className="price-filter">
-                                    <button className="btn">Filter</button>
-                                    <div className="filter-text">From $9.99 - $700</div>
+
+                                <div className="scale-price">
+                                    <div className="num">$9.99</div>
+                                    <div className="num">$700</div>
                                 </div>
                             </div>
+                            <div className="price-filter">
+                                <button className="btn">Filter</button>
+                                <div className="filter-text">From $9.99 - $700</div>
+                            </div>
                         </div>
-                        <div className="filter-block">
-                            <div className="filter-name">avarage rating</div>
-                            {
-                                currentCategory && <RateList />
-                            }
-                        </div>
-                    </div> 
+                    </div>
+                    <div className="filter-block">
+                        <div className="filter-name">avarage rating</div>
+                        {
+                            currentCategory && <RateList />
+                        }
+                    </div>
+                </div>
             </div>
 
             <div className="category-content">
