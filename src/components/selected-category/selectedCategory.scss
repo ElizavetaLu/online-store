@@ -19,6 +19,10 @@
                 width: 25px;
             }
         }
+
+        .filters{
+            display: none;
+        }
     }
 
     .category-content {
@@ -172,6 +176,7 @@
             }
 
             .filters{
+                display: block;
                 position: fixed;
                 top: 0;
                 bottom: 0;

@@ -109,7 +109,7 @@ const Header = () => {
                     </Link>
                 </div>
 
-                <img className="menu-mobile" onClick={() => setIsMenuHidden(!isMenuHidden)} src='/images/icons/menu.png' alt="" />
+                <img className="menu-mobile" onClick={() => setIsMenuHidden(!isMenuHidden)} src="/online-store/build//images/icons/menu.png" alt="" />
             </div >
         </div >
     )

@@ -12,7 +12,7 @@ const RateList = () => {
     const allCategories = useSelector(state => state.allData);
     const currentCategory = Object.entries(allCategories).find(elem => elem[0].slice(0, 3) === name.slice(0, 3));
 
-    const createArrayWithStars = length => [...Array(length)].fill('/images/icons/star.png', 0);
+    const createArrayWithStars = length => [...Array(length)].fill('/online-store/build//images/icons/star.png', 0);
 
     const handleProducts = productsArr => {
         dispatch(setSelectedRateProducts(productsArr));
