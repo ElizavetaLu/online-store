@@ -99,7 +99,7 @@ const Header = () => {
                     <div className="item">
                         <img src="/online-store/build//images/icons/user.png" alt="" className="item-icon" />
                     </div>
-                    <Link to={'shopping-cart'}>
+                    <Link to="online-store/build/shopping-cart">
                         <div className="item">
                             {
                                 cart.length > 0 && <div className="circle"></div>

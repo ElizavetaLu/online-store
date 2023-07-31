@@ -22,7 +22,7 @@ const ProductCard = (props) => {
                     <div className="price">${price}</div>
                     <div className="rate">
                         <img className="star" src="/online-store/build//images/icons/star.png" alt="" />
-                        <div className="rate0numb"> {rating.rate}</div>
+                        <div className="rate-numb"> {rating.rate}</div>
                     </div>
                 </div>
 
