@@ -2,12 +2,21 @@
 
 $main_panel_color: #e5e2e1;
 $main_slider_height: 700px;
-$header_height: 87px;
 $cart_rows_height: 70px;
 
 $light_black: rgb(81, 81, 81);
 $margin_between_sections: 100px;
 
+
+@mixin container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+@mixin container-mobile-padding {
+    padding: 0 16px;
+}
 
 @mixin flex_center {
     display: flex;
@@ -33,5 +42,3 @@ $margin_between_sections: 100px;
     font-weight: 600;
     text-transform: uppercase;
 }
-
-

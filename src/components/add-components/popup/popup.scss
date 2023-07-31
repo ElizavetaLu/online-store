@@ -1,0 +1,58 @@
+@import '../../../varibles';
+
+.popup {
+    @include flex_just-sp-b_align-c;
+    position: fixed;
+    top: 60px;
+    right: 40px;
+    z-index: 1;
+    background-color: rgb(220, 239, 205);
+    padding: 13px 20px;
+    border-radius: 2px;
+    opacity: 0;
+    transition: .8s;
+    color: $light_black;
+    cursor: default;
+
+    .icon {
+        width: 20px;
+        margin-right: 10px;
+        opacity: 0.4;
+    }
+
+    .pupup-text {
+        font-size: 17px;
+        font-weight: 400;
+        margin-right: 12px;
+    }
+
+    .close {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        transform: rotate(45deg);
+        opacity: 0.3;
+        transition: all .2s;
+
+        .close-img {
+            width: 20px;
+        }
+    }
+
+    .close:hover {
+        opacity: 0.8;
+    }
+}
+
+.popup.active {
+    opacity: 1;
+}
+
+.popup:hover {
+    background-color: rgb(196, 233, 169);
+    color: rgb(38, 38, 38);
+
+    .icon {
+        opacity: 0.6;
+    }
+}

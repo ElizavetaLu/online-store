@@ -1,18 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./goBack.scss"
+import "./goBack.scss";
 
 const GoBack = () => {
 
     const navigate = useNavigate();
 
     return (
-        <div className="nav-btn" onClick={() => navigate(-1)}>
-            <div className="arrow-back">
-                <img src="/online-store/build//images/icons/d-arrow.png" alt="" />
-            </div>
-            <div className="text">Go back</div>
-        </div>
+        <button className="back" onClick={() => navigate(-1)}>
+            <img className="back-icon" src="/online-store/build//images/icons/vector.png" alt="" />
+        </button>
     )
 }
 

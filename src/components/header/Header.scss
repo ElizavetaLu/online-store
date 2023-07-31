@@ -1,67 +1,53 @@
 @import "../../varibles";
 
 .header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: $header_height;
-    box-sizing: border-box;
+    @include flex_center;
     background-color: $main_panel_color;
-    padding: 10px 40px;
+    padding: 15px 0px;
+
+    .header-mobile {
+        display: none
+    }
 
     .header-main {
-        @include flex_just-sp-b_align-c;
+        @include container;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
 
         .location-container {
-            min-width: 200px;
             display: flex;
             align-items: center;
 
             .location-icon {
-                @include flex_center;
-
-                img {
-                    margin-right: 7px;
-                    width: 20px;
-                }
+                margin-right: 7px;
+                width: 20px;
             }
         }
 
         .logo-nav {
-            position: relative;
             display: flex;
-            justify-content: center;
-            width: 250px;
+            flex-direction: column;
+            align-items: center;
 
-            .logo {
-                img {
+            .logo-link {
+                .logo {
                     width: 100px;
                 }
             }
 
             .header-navigation {
-                z-index: 200;
-                bottom: -32px;
-                position: absolute;
-                @include flex_center;
-                height: 100%;
+                display: flex;
+                gap: 30px;
 
                 .nav-item {
-                    padding: 10px 0px;
-                    width: 80px;
-                    border-bottom: 1.5px solid transparent;
                     position: relative;
                     cursor: pointer;
-                    @include flex_center;
 
                     .categories-nav {
-                        box-sizing: border-box;
                         position: absolute;
-                        left: 0;
-                        bottom: -157px;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-start;
+                        top: 39px;
+                        z-index: 10;
                         background-color: #fff;
                         width: 200px;
                         box-shadow: 2px 2px 4px #0000000a;
@@ -69,13 +55,12 @@
                 }
 
                 .nav-item:hover {
-                    font-size: 17px;
                     font-weight: 500;
                 }
             }
         }
 
-        .headet-items {
+        .header-items {
             display: flex;
             align-items: center;
             padding-top: 3px;
@@ -88,26 +73,16 @@
                     width: 8px;
                     height: 8px;
                     border-radius: 50%;
-                    top: 0;
-                    right: 3px;
+                    top: -3px;
+                    right: 1px;
                     background-color: rgb(224, 5, 5);
                 }
 
                 .item-icon {
-                    width: 30px;
+                    width: 27px;
                     margin: 0px 10px;
                     padding-bottom: 5px;
                 }
-
-                .item-icon.user {
-                    width: 37px;
-                }
-
-                .item-icon.cart {
-                    width: 27px;
-                }
-
-
 
                 .wrap {
                     display: inline-block;
@@ -149,7 +124,7 @@
                         width: 30px;
                         display: inline-block;
                         background-color: transparent;
-                        background-image: url("/online-store/build/../../../public/images/icons/search.png");
+                        background-image: url("../../../public/images/icons/search.png");
                         background-size: contain;
                         background-repeat: no-repeat;
                         text-indent: -10000px;
@@ -162,6 +137,103 @@
                     }
 
                 }
+            }
+        }
+
+        .menu-mobile {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .header {
+
+        .header-mobile {
+            display: block;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-color: $main_panel_color;
+            padding: 45px;
+            @include flex_center;
+            transition: all .6s ease;
+
+            .close-container {
+                position: absolute;
+                right: 30px;
+                top: 30px;
+                border: none;
+                background-color: transparent;
+
+                .close {
+                    width: 30px;
+                    height: 30px;
+                    transform: rotate(45deg)
+                }
+            }
+
+            .navigation-mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+
+                .nav-item-mobile {
+                    cursor: pointer;
+                    font-size: 20px;
+
+                    .nav-item-name-mobile {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+
+                        .vector {
+                            transform: rotate(90deg);
+                            width: 15px;
+                        }
+                        .vector.active {
+                            transform: rotate(-90deg);
+                            width: 15px;
+                        }
+                    }
+
+                    .categories-nav-mobile{
+                        margin-top: 7px;
+                    }
+                }
+            }
+        }
+
+        .header-mobile.hidden {
+            top: -100%
+        }
+
+        .header-main {
+            @include container-mobile-padding;
+
+            .location-container {
+                display: none;
+            }
+
+            .logo-nav {
+                justify-content: center;
+
+                .header-navigation {
+                    display: none;
+                }
+            }
+
+            .header-items {
+                display: none;
+            }
+
+            .menu-mobile {
+                display: block;
+                width: 40px;
             }
         }
     }

@@ -1,22 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Footer.scss"
+import "./Footer.scss";
+
+const navList = ['shop', 'about', 'contact', 'blog'];
 
 const Footer = () => {
+
     return (
-        <div className="footer">
-            <div className="footer-navigation">
-                <div className="nav-item">Shop</div>
-                <div className="nav-item">About</div>
-                <div className="nav-item">Contact</div>
-                <div className="nav-item">Blog</div>
-            </div>
-            <Link to={'/online-store/build/'}>
-                <div className="logo">
-                    <img src="/online-store/build//images/icons/text-1669408186912.png" alt="" />
+        <div className="footer-container">
+            <div className="footer">
+                <div className="footer-navigation">
+                    {
+                        navList.map(item => <div key={item} className="nav-item">{item}</div>)
+                    }
                 </div>
-            </Link>
-            <div className="company">@ 2022 Pipka. All rights are reserved</div>
+
+                <Link to="/online-store/build" className="logo">
+                    <img className="logo-icon" src="/online-store/build//images/icons/text-1669408186912.png" alt="" />
+                </Link>
+
+                <p className="company">&#64; 2022 Pipka. All rights are reserved</p>
+
+
+                {/* mobile */}
+                <div className="footer-mobile-logo">
+                    <Link to="/online-store/build" className="logo-mobile">
+                        <img className="logo-icon-mobile" src="/online-store/build//images/icons/text-1669408186912.png" alt="" />
+                    </Link>
+
+                    <p className="company-mobile">&#64; 2022 Pipka. All rights are reserved</p>
+                </div>
+
+                <div className="footer-mobile-navigation">
+                    {
+                        navList.map(item => <div key={item} className="nav-item">{item}</div>)
+                    }
+                </div>
+            </div>
         </div>
     )
 }

@@ -1,82 +1,126 @@
 @import "../../varibles";
 
-.main-container {
+.block-section {
+    @include container;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    margin-top: calc(60px + $margin_between_sections);
 
-    .block-section {
-        max-width: 1600px;
-        margin: 0 auto;
-        height: 750px;
+    .column {
         display: flex;
-        justify-content: center;
-        margin-top: calc(60px + $margin_between_sections);
+        flex-direction: column;
+        gap: 30px;
 
-        .column {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 412px;
+        .block-large {
+            border-radius: 2px;
+            width: 100%;
             height: 100%;
+            max-width: 412px;
+            max-height: 450px;
 
-            .block-large {
-                width: 412px;
-                height: 450px;
-                overflow: hidden;
-
-                img {
-                    width: 412px;
-                    
-                }
-            }
-
-            .block-sm {
-                width: 412px;
-                height: 270px;
-                overflow: hidden;
-
-                img {
-                    width: 412px;
-                }
+            img {
+                border-radius: 2px;
+                width: 100%;
+                height: 100%;
             }
         }
 
-        .column.reverse {
-            flex-direction: column-reverse;
-            margin: 0px 30px;
+        .block-sm {
+            border-radius: 2px;
+            width: 100%;
+            height: 100%;
+            max-width: 412px;
+            max-height: 270px;
 
-            .block-sm.text {
-                box-sizing: border-box;
-                padding: 30px;
-                text-align: center;
-                @include flex_center;
-                font-size: 24px;
-                text-transform: uppercase;
-                background-color: $main_panel_color;
-                color: rgb(32, 0, 0);
+            img {
+                border-radius: 2px;
+                width: 100%;
+                height: 100%;
             }
         }
     }
 
+    .column.reverse {
+        flex-direction: column-reverse;
 
+        .block-sm.text {
+            padding: 30px;
+            text-align: center;
+            @include flex_center;
+            font-size: 24px;
+            text-transform: uppercase;
+            background-color: $main_panel_color;
+            color: rgb(32, 0, 0);
+        }
+    }
+}
 
-    .new-arrivals {
-        width: 90%;
-        max-width: 1600px;
-        margin: 0 auto;
-        margin-top: $margin_between_sections;
+.new-arrivals {
+    @include container;
+    margin-top: $margin_between_sections;
 
-        .row-title {
-            font-size: 30px;
+    .row-title {
+        font-size: 30px;
+    }
+
+    .products-list {
+        display: flex;
+
+        .vector-btn {
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            top: 40%;
+
+            .vector {
+                width: 30px;
+            }
+
+            .vector.reverse {
+                transform: rotate(0.5turn);
+            }
+
+            &:last-child {
+                right: -40px;
+            }
+
+            &:first-child {
+                left: -40px;
+            }
+        }
+
+        .vector-btn.disabled-left, .vector-btn.disabled-right {
+            opacity: 0.5;
         }
 
         .all-cards {
             overflow: hidden;
             overflow-x: scroll;
-            @include flex_center;
             padding: 20px 0px;
-            height: 345px;
+            display: flex;
+            gap: 20px;
         }
+    }
+}
 
+@media screen and (max-width: 900px) {
+    .block-section {
+        @include container-mobile-padding;
+
+
+        .column.reverse {
+            .block-sm.text {
+                font-size: 17px;
+            }
+        }
+    }
+
+    .new-arrivals {
+        @include container-mobile-padding;
+
+        .row-title {
+            font-size: 24px;
+        }
     }
 }

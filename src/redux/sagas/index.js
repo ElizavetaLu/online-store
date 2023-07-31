@@ -9,7 +9,7 @@ import {
   setWomenClothing
 } from '../actions';
 
-import { GET_DATA} from '../actions/types';
+import { GET_DATA } from '../actions/types';
 import { setData } from '../actions/index';
 
 export function* handleGetData() {
@@ -21,7 +21,7 @@ export function* handleGetData() {
     yield put(setData(data))
 
   } catch (err) {
-    console.log(err)
+    console.error(err)
   }
 }
 
@@ -40,7 +40,7 @@ export function* handleCategories() {
     yield put(setWomenClothing(women.data))
 
   } catch (err) {
-    console.log(err)
+    console.error(err)
   }
 }
 
@@ -59,7 +59,7 @@ export function* handleUserLocation() {
     yield put(setLocation(userLocation))
 
   } catch (err) {
-    console.log(err)
+    console.error(err)
   }
 }
 

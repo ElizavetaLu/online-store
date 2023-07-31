@@ -1,3 +1,7 @@
+export const SHOW_POPUP = 'SHOW_POPUP'
+export const SET_POPUP_TEXT = 'SET_POPUP_TEXT'
+
+
 export const GET_DATA = 'GET_DATA'
 export const SET_DATA = 'SET_DATA'
 
@@ -12,9 +16,7 @@ export const SET_SELECTED_RATE_PRODUCTS = 'SET_SELECTED_RATE_PRODUCTS'
 export const SET_ACTIVE_RATE = 'SET_ACTIVE_RATE'
 
 
-
 export const SET_LOCATION = 'SET_LOCATION'
-
 
 
 export const ADD_TO_CART = 'ADD_TO_CART'

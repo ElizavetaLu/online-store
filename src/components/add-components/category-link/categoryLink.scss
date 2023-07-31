@@ -1,13 +1,12 @@
 @import "../../../varibles";
 
 .item-link {
+    text-transform: capitalize;
     text-decoration: none;
     color: #000;
-    text-transform: capitalize;
-width: 100%;
+    width: 100%;
 
-    .category-item {
-        box-sizing: border-box;
+    .category-item { 
         white-space: nowrap;
         border-left: 2px solid transparent;
         height: 40px;
@@ -15,11 +14,22 @@ width: 100%;
         align-items: center;
         padding: 0px 10px;
         font-weight: 400;
+        transition: all .2s;
     }
 
     .category-item:hover {
         border-left: 2px solid #000;
         background-color: rgb(241, 241, 241);
-
     }
+}
+
+@media screen and (max-width: 900px) {
+    .item-link { 
+    
+        .category-item { 
+            border-left: 1.5px solid #000;
+            font-size: 16px;
+            height: 30px; 
+        } 
+    } 
 }

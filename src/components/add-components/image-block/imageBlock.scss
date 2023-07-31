@@ -3,18 +3,17 @@
 .image-section {
     position: relative;
     background-size: cover;
-    height: 660px;
 
     .categories {
         position: absolute;
+        @include container;
+        z-index: 1;
         bottom: -60px;
         right: 0;
         left: 0;
-
         display: flex;
         justify-content: center;
-        align-items: flex-end;
-
+        gap: 20px;
     }
 
     .image-container {
@@ -34,6 +33,31 @@
             background: linear-gradient(0deg, rgba(246, 246, 246, 1) 21%, rgba(255, 255, 255, 0) 71%);
         }
     }
+}
 
+@media screen and (max-width: 1100px) {
+    .image-section {
+        .categories {
+            flex-wrap: wrap;
+        }
+        .image-container {
+            height: 870px;
+        }
+    }
+}
 
+@media screen and (max-width: 700px) {
+    .image-section {
+        .image-container {
+            height: 500px;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .image-section {
+        .image-container {
+            height: 400px;
+        }
+    }
 }
