@@ -9,7 +9,7 @@ const CategoryLink = ({ name }) => {
     const dispatch = useDispatch()
 
     return (
-        <Link to={`/${name}`} className="item-link">
+        <Link to={`/online-store/build/${name}`} className="item-link">
             <div className="category-item" onClick={() => dispatch(setActiveRate(false))}>
                 {name}
             </div>
